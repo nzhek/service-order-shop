@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Главная - список заказов {% endblock %}
+
+{% block content %}
+    <article>
+        <h2>Список заказов</h2>
+        <div style="margin-bottom: 25px">
+            <select onchange="reloadOrder()" id="select_week">
+                <option value="">Текущая неделя</option>
+                <option value="1">Первая неделя</option>
+                <option value="2">Вторая неделя</option>
+                <option value="3">Третья неделя</option>
+                <option value="4">Четвертая неделя</option>
+                <option value="5">Пятая неделя</option>
+                <option value="6">Шестая неделя</option>
+            </select>
+        </div>
+        <div class="block-order"></div>
+    </article>
+{% endblock %}
+
+
+{% block js_footer %}
+    <script src="/static/assets/script/main.js"></script>
+{% endblock %}
+

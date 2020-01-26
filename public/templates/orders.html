@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Личный кабинет - редактирование заказов{% endblock %}
+{% block nav %}
+    <a href="{% url 'sign_out' %}">Выйти</a>
+{% endblock %}
+{% block content %}
+    <article>
+        <h2>Добавить заказ</h2>
+        <div style="margin-bottom: 25px">
+            <select onchange="reloadOrder()" name="customer" id="select_customer" required>
+                <option value="">Не выбрано</option>
+            </select><br>
+            <input type="number" name="amount_price" id="amount_price" value="" placeholder="Сумма заказа" required/><br>
+            <button onclick="createOrder()">Добавить</button>
+        </div>
+    </article>
+    <article>
+        <h2>Список заказов</h2>
+        <div class="block-order"></div>
+    </article>
+{% endblock %}
+
+{% block js_footer %}
+    <script src="/static/assets/script/orders.js"></script>
+{% endblock %}
+
+
